@@ -15,7 +15,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.stylecraft.domain.model.BodyShape
 import com.example.stylecraft.presentation.common.OnboardingHeader
 import com.example.stylecraft.presentation.common.PrimaryButton
@@ -26,7 +25,7 @@ import com.example.stylecraft.presentation.common.SelectableCard
 fun BodyShapeScreen(
     onNext: () -> Unit,
     onBack: () -> Unit,
-    viewModel: OnboardingViewModel = hiltViewModel()
+    viewModel: OnboardingViewModel
 ) {
     val state by viewModel.state.collectAsState()
 
@@ -77,4 +76,3 @@ fun BodyShapeScreen(
         )
     }
 }
-
